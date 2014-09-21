@@ -1,4 +1,4 @@
 config = {
-#   "username": 'pybot',
- #  "icon": ":poop:",
+   "username": 'pybot'
+   "icon": ,
 }
