@@ -1,4 +1,4 @@
 config = {
    "username": 'pybot'
-   "icon": ,
+   "icon": None,
 }
