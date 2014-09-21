@@ -6,7 +6,7 @@ import requests
 from random import shuffle
 
 def math(maths):
-    maths.replace("^","**")
+    #maths.replace("^","**")
     return str(eval(maths))
 
 def on_message(msg, server):
@@ -14,5 +14,5 @@ def on_message(msg, server):
     match = re.findall(r"!math (.*)", text)
     if not match: return
 
-    
-    return math(math)
+    searchterm = match[0]
+    return math(searchterm)
