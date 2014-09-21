@@ -7,7 +7,7 @@ from random import shuffle
 
 def math(maths):
     maths.replace("^","**")
-    return str(eval(maths)))
+    return str(evaluatesal(maths))
 
 def on_message(msg, server):
     text = msg.get("text", "")
