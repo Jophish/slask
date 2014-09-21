@@ -1,4 +1,4 @@
-"""!math <mathstuffs> evaluates to mathstuffs"""
+"""!math <mathstuffs> evaluates to mathstuffs """
 
 from urllib import quote
 import re
@@ -7,7 +7,7 @@ from random import shuffle
 
 def math(maths):
     maths.replace("^","**")
-    return string(eval(maths)))
+    return str(eval(maths)))
 
 def on_message(msg, server):
     text = msg.get("text", "")
