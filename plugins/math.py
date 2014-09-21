@@ -6,8 +6,10 @@ import requests
 from random import shuffle
 
 def math(maths):
-    maths.replace("^","**")
-    if maths == "2 + 2":
+    maths = maths.replace("^","**")
+    math2 = maths
+    math2 = math2.replace(" ", "")
+    if math2 == "2+2":
         return "5"
     return str(eval(maths))
 
