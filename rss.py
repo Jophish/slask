@@ -17,9 +17,11 @@ while True:
 
 	d = feedparser.parse('http://rss.nytimes.com/services/xml/rss/nyt/World.xml')
 
-	if recentArticle != d['entries'][0]['title']:
+	currentArticle = d['entries'][0]['title']
 
-		recentArticle = d['entries'][0]['title']
+	if str(recentArticle) != str(currentArticle):
+
+		recentArticle = str(d['entries'][0]['title'])
 		
 		session = requests.session()
 
@@ -30,23 +32,9 @@ while True:
 
 		payload = json.JSONEncoder().encode({"username": "NY Times", "icon_url" : "http://ryanmartin.me/wp-content/uploads/2014/05/Elkhart-Truth-new-website-favicon.png", "attachments" : [{"title": d['entries'][0]['title'], "text": d['entries'][0]['published'] + "\n "+ str(doc)}, ]})
 
-		r = requests.post(link, payload)
+		requests.post(link, payload)
 
-		time.sleep(30)
 
 
 	time.sleep(1)
 
-
-
-def rss():
-
-	pass
-
-
-def on_message(msg, server):
-    text = msg.get("text", "")
-    match = re.findall(r"!rss", text)
-    if not match: return
-
-    return rss()
