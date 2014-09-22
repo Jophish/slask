@@ -17,9 +17,9 @@ while True:
 
 	d = feedparser.parse('http://rss.nytimes.com/services/xml/rss/nyt/World.xml')
 	
-	if recentArticle != d['entries'][0]:
+	if recentArticle != d['entries'][0]['title']:
 
-		recentArticle = d['entries'][0]
+		recentArticle = d['entries'][0]['title']
 		
 		session = requests.session()
 
