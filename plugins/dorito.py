@@ -13,7 +13,7 @@ def on_message(msg, server):
     link = "http://tinyurl.com/n4a4l6m"
 
     text = msg.get("text", "")
-    match = re.findall("!dorito")
+    match = re.findall(r"!dorito", text)
     if not match: return
 
     searchterm = match[0]
