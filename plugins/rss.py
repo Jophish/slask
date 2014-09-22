@@ -2,7 +2,7 @@ import feedparser
 import requests
 import json
 import time
-import BeautifulSoup
+from bs4 import BeautifulSoup
 
 d = feedparser.parse('http://rss.nytimes.com/services/xml/rss/nyt/World.xml')
 
