@@ -1,5 +1,7 @@
 """!math <mathstuffs> evaluates to mathstuffs """
 
+# joe bergeron
+
 from urllib import quote
 import re
 import requests
