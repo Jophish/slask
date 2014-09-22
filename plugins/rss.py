@@ -2,6 +2,7 @@ import feedparser
 import requests
 import json
 import time
+import bs4
 
 d = feedparser.parse('http://rss.nytimes.com/services/xml/rss/nyt/World.xml')
 
@@ -24,9 +25,9 @@ while True:
 
 		req = session.get('http://tinyurl.com/api-create.php?url='+d['entries'][0]['link'])
 
-		print(req)
+		doc = bs4.BeautifulSoup(req.content)
 
-		payload = json.JSONEncoder().encode({"username": "NY Times", "icon_url" : "http://ryanmartin.me/wp-content/uploads/2014/05/Elkhart-Truth-new-website-favicon.png", "attachments" : [{"title": d['entries'][0]['title'], "text": d['entries'][0]['published'] + "\n "+ str(req)}, ]})
+		payload = json.JSONEncoder().encode({"username": "NY Times", "icon_url" : "http://ryanmartin.me/wp-content/uploads/2014/05/Elkhart-Truth-new-website-favicon.png", "attachments" : [{"title": d['entries'][0]['title'], "text": d['entries'][0]['published'] + "\n "+ str(doc)}, ]})
 
 		r = requests.post(link, payload)
 		print(r)
