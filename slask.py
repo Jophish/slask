@@ -14,7 +14,7 @@ os.chdir(curdir)
 
 from config import config
 
-os.system('python rss.py &')
+#os.system('python rss.py &')
 
 hooks = {}
 def init_plugins():

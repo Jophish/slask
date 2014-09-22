@@ -32,6 +32,7 @@ while True:
 
 		r = requests.post(link, payload)
 
+		time.sleep(30)
 
 
 	time.sleep(1)
