@@ -1,6 +1,6 @@
 """!btc returns the 24 hour average for btc/usd"""
 
-from bs4 import BeautifulSoup
+import bs4
 from urllib import quote
 import re
 import requests
@@ -13,7 +13,7 @@ def btc():
 
     session = requests.session()
     req = session.get('https://api.bitcoinaverage.com/all')
-    doc =  str(BeautifulSoup.BeautifulSoup(req.content)) #[15:-18]
+    doc =  str(bs4.BeautifulSoup(req.content)) #[15:-18]
     doc = doc.split('USD')[1][40:46]
     return("1 btc -> " + doc + " usd")
 
