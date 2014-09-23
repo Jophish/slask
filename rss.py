@@ -14,7 +14,7 @@ icons = feeds.icons
 currentArticles = [None]*len(links)
 recentArticles = [None]*len(links)
 
-check = False #enable if you don't want the bot spamming the channel with rss feeds when it's turned on
+check = True #enable if you don't want the bot spamming the channel with rss feeds when it's turned on
 
 while True:
 
