@@ -1,6 +1,6 @@
 """!btc returns the 24 hour average for btc/usd"""
 
-import BeautifulSoup as bs4
+from bs4 import BeautifulSoup
 from urllib import quote
 import re
 import requests
