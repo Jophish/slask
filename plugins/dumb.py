@@ -14,7 +14,7 @@ def dumb():
 
 def on_message(msg, server):
     text = msg.get("text", "")
-    match = re.findall(r"!math (.*)", text)
+    match = re.findall(r"!why (.*)", text)
     if not match: return
 
     searchterm = match[0]
