@@ -18,7 +18,7 @@ def on_message(msg, server):
     if not match: return
 
     searchterm = match[0]
-    if searchterm.replace(" ", "") == "areyousodumb"
+    if searchterm.replace(" ", "") == "areyousodumb":
         return dumb()
     else:
         return
